@@ -6,6 +6,9 @@ cp .env.example .env
 
 cd docker
 docker-compose up -d
+
+docker exec doc_storage_php "composer install"
+docker exec doc_storage_php "php artisan migrate"
 ```
 
 Documents list (Use "New document" button for upload documents):
